@@ -8,18 +8,18 @@ object DecodePruffer extends App {
   def decode(codes: List[Int]) = {
 
     @scala.annotation.tailrec
-    def decode(codes: List[Int], possible: TreeSet[Int], edges: Set[Edge]): Set[Edge] = {
+    def decode(codes: List[Int], candidates: TreeSet[Int], edges: Set[Edge]): Set[Edge] = {
       codes match {
         case Nil =>
-          val p1 = possible.head
-          val p2 = possible.last
+          val p1 = candidates.head
+          val p2 = candidates.last
           val edge: Edge = (p1, p2)
           edges + edge
 
         case code :: codesLeft =>
-          val p = (possible -- codes).head
-          val edge = (code, p)
-          decode(codesLeft, possible - p, edges + edge)
+          val candidate = (candidates -- codes).head
+          val edge = (code, candidate)
+          decode(codesLeft, candidates - candidate, edges + edge)
       }
     }
 

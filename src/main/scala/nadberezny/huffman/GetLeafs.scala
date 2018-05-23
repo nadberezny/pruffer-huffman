@@ -1,8 +1,8 @@
 package nadberezny.huffman
 
 object GetLeafs {
-  def apply(): List[Node] = {
-    charFrequencies
+  def apply(chars: List[Char]): List[Node] = {
+    charFrequencies(chars)
       .toSeq
       .sortBy(_._2)
       .map(seq =>
@@ -11,8 +11,8 @@ object GetLeafs {
       .toList
   }
 
-  private lazy val charFrequencies: Map[Char, Int] =
-    GetChars()
+  private def charFrequencies(chars: List[Char]): Map[Char, Int] =
+    chars
       .foldLeft(mapWithDefault)((map, char) =>
          map + (char -> (map(char) + 1))
       )

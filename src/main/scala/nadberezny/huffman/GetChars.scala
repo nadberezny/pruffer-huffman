@@ -3,8 +3,8 @@ package nadberezny.huffman
 import scala.io.Source
 
 object GetChars {
-  def apply(): List[Char] = {
-    val source = Source.fromFile("./input/huffman.txt")
+  def apply(filePath: String): List[Char] = {
+    val source = Source.fromFile(filePath)
 
     val chars: List[Char] = (for {
       line <- source.getLines

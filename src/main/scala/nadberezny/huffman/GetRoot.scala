@@ -1,13 +1,12 @@
 package nadberezny.huffman
 
-object GenerateTree {
-  def apply(): Node = reduceNodes(GetLeafs())
+object GetRoot {
+  def apply(nodes: List[Node]): Node = reduceNodes(nodes)
 
   @scala.annotation.tailrec
   private def reduceNodes(nodes: List[Node]): Node = {
     nodes match {
-      case node :: Nil =>
-        node
+      case root :: Nil => root
 
       case node1 :: node2 :: tail =>
         val sumNode = Node(

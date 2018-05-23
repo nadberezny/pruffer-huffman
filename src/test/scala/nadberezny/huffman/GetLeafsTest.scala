@@ -4,16 +4,15 @@ import org.scalatest.FunSuite
 
 class GetLeafsTest extends FunSuite {
   test(".apply") {
-    val expectedLeafs = Seq(
-      Node(Some('a'), 5, None),
-      Node(Some('b'), 9, None),
-      Node(Some('c'), 12, None),
-      Node(Some('d'), 13, None),
-      Node(Some('e'), 16, None),
-      Node(Some('f'), 45, None)
+    val chars = List('c', 'a', 'b', 'a', 'a', 'c')
+
+    val expectedLeafs = List(
+      Node(Some('b'), 1, None),
+      Node(Some('c'), 2, None),
+      Node(Some('a'), 4, None)
     )
 
-    assert(GetLeafs() == expectedLeafs)
+    assert(GetLeafs(chars) == expectedLeafs)
   }
 
 }

@@ -21,7 +21,7 @@ object EncodePruffer extends App {
   }
 
   // example
-  val tree = Tree(
+  val tree = Tree.apply(
     3 -> Set(1),
     1 -> Set(3, 5, 2),
     5 -> Set(1),

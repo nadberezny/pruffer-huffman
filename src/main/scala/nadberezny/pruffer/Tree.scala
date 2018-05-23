@@ -1,12 +1,14 @@
 package nadberezny.pruffer
 
 object Tree {
+  type Edges = Set[Set[Int]]
+
   val emptyTree =
     new Tree(Map.empty[Int, Set[Int]].withDefaultValue(Set.empty))
 
   def apply(elems: (Int, Set[Int])*): Tree = new Tree(elems.toMap)
 
-  def apply(edges: Set[Set[Int]]): Tree =
+  def apply(edges: Edges): Tree =
     edges.foldLeft(emptyTree)((tree, edge) =>
       (tree merge (edge.head -> Set(edge.last))) merge (edge.last -> Set(edge.head))
     )

@@ -2,9 +2,9 @@ package nadberezny.huffman
 
 import org.scalatest.FunSuite
 
-class GenerateTreeTest extends FunSuite {
+class GetLabeledTreeTest extends FunSuite {
   test(".apply") {
-    val expectedTree = Node(
+    val root = Node(
       None,
       100,
       Some(
@@ -49,6 +49,9 @@ class GenerateTreeTest extends FunSuite {
       )
     )
 
-    assert(GenerateTree() == expectedTree)
+//    val r = GetLabeledTree(root)
+    val r = root.flatten
+    val x = r
   }
+
 }
