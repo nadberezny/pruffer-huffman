@@ -29,6 +29,8 @@ class Tree(tree: Map[Int, Set[Int]]) {
 
   lazy val minDegreeVertex: Int = tree.toSeq.sortBy(_._1).sortBy(_._2.size).head._1
 
+  lazy val root: (Int, Set[Int]) = tree.filter(_._2.size == 2).head
+
   def apply(key: Int): Set[Int] = tree(key)
 
   def +(kv: (Int, Set[Int])): Tree = new Tree(tree + kv)

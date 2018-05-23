@@ -32,8 +32,8 @@ object MainApp extends App {
     case None =>
       println("Please provide path to the text file.")
 
-    case Some(filePath) =>
-      WritePruffer(filePath , prufferCode)
+    case _ =>
+      WritePruffer(prufferCode, rootLabel = decodedTree.root._1)
       WriteGraph("./graph.dot", decodedTree)
       println("Great success! File graph.dot created.")
   }
