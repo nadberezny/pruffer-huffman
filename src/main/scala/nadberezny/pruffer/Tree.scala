@@ -33,7 +33,7 @@ class Tree(tree: Map[Int, Set[Int]]) {
 
   def +(kv: (Int, Set[Int])): Tree = new Tree(tree + kv)
 
-  def -(key: Int): Tree = new Tree(tree - key)
+  def -(edge: Set[Int]): Tree = Tree(edges - edge)
 
   def merge(kv: (Int, Set[Int])): Tree = {
     val merged = tree.get(kv._1) match {

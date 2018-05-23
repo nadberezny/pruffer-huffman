@@ -1,7 +1,5 @@
 package nadberezny.huffman
 
-import nadberezny.pruffer.Tree
-
 case class Node(
                  label: Option[Char] = None,
                  frequency: Int,
@@ -14,10 +12,6 @@ case class Node(
   }
 
   lazy val self: Node = Node(label, frequency, nodes)
-
-  def toTree: Tree = {
-    
-  }
 
   def flatten: List[Node] = {
     def flatten(toFlatten: List[Node], nodes: List[Node]): List[Node] = {

@@ -1,7 +1,8 @@
 package nadberezny.huffman
 
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Ignore}
 
+@Ignore
 class GetLeafsTest extends FunSuite {
   test(".apply") {
     val chars = List('c', 'a', 'b', 'a', 'a', 'c')

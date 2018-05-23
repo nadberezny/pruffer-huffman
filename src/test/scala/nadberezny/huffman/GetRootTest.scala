@@ -1,7 +1,8 @@
 package nadberezny.huffman
 
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Ignore}
 
+@Ignore
 class GetRootTest extends FunSuite {
   test(".apply") {
     val leafs = List(
